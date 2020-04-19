@@ -1,0 +1,67 @@
+body, html {
+  height: 100%;
+}
+
+.bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 430px;
+  width: 100%;
+}
+
+#buttlogin, #buttjoin {
+  border: 1px solid #078171;
+  width: 90px;
+  height: 40px;
+  background-clip: padding-box;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  border-color: #000;
+  border-radius: 6px;
+  font-Family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#buttlogin {
+  background-color: #fff;
+  color: #000;
+}
+
+#buttjoin {
+  background-color: #000;
+  color: #fff;
+}
+
+#buttlogin:hover {
+  background-color: #d6d6d6;
+  border-color: #000;
+}
+
+#buttjoin:hover {
+  border-color: #292929;
+  background-color: #292929;
+}
+
+.txtcontent {
+  font-family: Helvetica;
+  color: #000;
+}
+
+@media screen and (max-width: 600px) {
+  .bg {
+    height: 300px;
+    width: 100%;
+  }
+
+  .txtcontent {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=bibs.css.map */

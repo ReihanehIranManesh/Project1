@@ -1,0 +1,32 @@
+{% extends "registrationlayout.html" %}
+
+{% block title %}
+Log in!
+{% endblock %}
+
+{% block body %}
+<form action="{{url_for('login_check')}}" method="post" class="container">
+  {% if message is defined %}
+  <div class="alert alert-danger alert-dismissible fade show alertmsg" role="alert">
+    <strong>Sorry!</strong> {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+  </div>
+  {% endif %}
+  <a href="{{url_for('index')}}">
+    <img src="{{url_for('static', filename='bibliophiles_icon.png')}}" alt="" class="center">
+  </a>
+  <label id="logincolHeader"></label>
+  <label for="username" class="label"><b>Username</b></label>
+  <input type="text" class="text" title="Enter your username" placeholder="Username" name="username">
+  <label class="label" for="psw"><b>Password</b></label>
+  <input type="password" class="text" title="Enter your password" placeholder="Password" name="psw">
+  <button class="Joinloginbut" type="submit" name="button" onclick="window.location.href = '{{url_for('home')}}';">Log in</button>
+  <div class="footerNav">
+    Don't have an account?
+    <a href="{{url_for('join')}}">
+      <span class="taLnk">Join us.</span>
+    </a>
+  </div>
+</form>
+
+{% endblock %}

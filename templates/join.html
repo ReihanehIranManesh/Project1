@@ -1,0 +1,33 @@
+{% extends "registrationlayout.html" %}
+
+{% block title %}
+Join!
+{% endblock %}
+
+{% block body %}
+<form action="{{url_for('join_check')}}" method="post" class="container">
+  {% if message is defined %}
+  <div class="alert alert-danger alert-dismissible fade show alertmsg" role="alert">
+    <strong>Sorry!</strong> {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+  </div>
+  {% endif %}
+  <a href="{{url_for('index')}}">
+    <img src="{{url_for('static', filename='bibliophiles_icon.png')}}" alt="" class="center">
+  </a>
+  <label id="joincolHeader"></label>
+  <label for="username" class="label"><b>Username</b></label>
+  <input type="text" class="text" title="Enter your username" placeholder="Username" name="username">
+  <label class="label" for="psw"><b>Create a password</b></label>
+  <input type="password" class="text" title="Create your password" placeholder="Password" name="psw" >
+  <label for="confirmpsw" class="label"><b>Confirm password</b></label>
+  <input type="password" class="text" title="Confirm your password" placeholder="Confirm password" name="confirmpsw" >
+  <button class="Joinloginbut" type="submit" name="button" onclick="window.location.href = '{{url_for('home')}}';">Join</button>
+  <div class="footerNav">
+    Already have an account?
+    <a href="{{url_for('login')}}">
+      <span class="taLnk">Log in.</span>
+    </a>
+  </div>
+</form>
+{% endblock %}

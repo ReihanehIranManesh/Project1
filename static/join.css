@@ -1,0 +1,207 @@
+@charset "UTF-8";
+body, html {
+  height: 100%;
+}
+
+.alertmsg {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.center {
+  margin-left: 100px;
+  height: 60px;
+}
+
+#logincolHeader, #joincolHeader {
+  margin-top: 10px;
+  margin-left: 50px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: left;
+  color: #000a12;
+  font-family: "Trip Sans", Arial, sans-serif;
+}
+
+#joincolHeader {
+  margin-left: 25px;
+}
+
+#logincolHeader::before {
+  content: "Welcome back – log in!";
+}
+
+#joincolHeader::before {
+  content: "Join now – it’s going to be fun!";
+}
+
+.label {
+  margin-left: 3px;
+  line-height: 12px;
+  font-weight: 500;
+  text-align: left;
+  color: #000;
+  cursor: default;
+  font-family: "Trip Sans", Arial, sans-serif;
+}
+
+.text {
+  margin: 3px 0 22px;
+  background: #f1f1f1;
+  width: 270px;
+  height: 48px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: inherit;
+  vertical-align: text-top;
+  outline: none;
+  cursor: text;
+  display: inline-block;
+}
+
+.Joinloginbut {
+  width: 270px;
+  height: 43px;
+  padding: 8px 16px;
+  background: #000;
+  border-radius: 12px;
+  border-color: #000;
+  color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  font-family: inherit;
+  border: 1px solid transparent;
+}
+
+.Joinloginbut:hover {
+  border-color: #292929;
+  background-color: #292929;
+}
+
+.footerNav {
+  margin-left: 3px;
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+  font-family: "Trip Sans", Arial, sans-serif;
+  color: #000;
+}
+
+.taLnk {
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.taLnk:hover {
+  text-decoration: underline;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  background-image: url("library.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  margin: 20px;
+  margin-top: 45px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: #ffd9b3;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+@media screen and (max-width: 700px) {
+  #logincolHeader::before {
+    content: "Welcome back!";
+  }
+
+  #joincolHeader::before {
+    content: "Join us now!";
+    margin-left: 10px;
+  }
+
+  #logincolHeader, #joincolHeader {
+    margin-top: 17px;
+    margin-left: 60px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 10px;
+  }
+
+  .center {
+    margin-left: 82px;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  .alertmsg {
+    font-size: 12px;
+  }
+
+  .container {
+    margin: 20px;
+    margin-top: 60px;
+    max-width: 250px;
+  }
+
+  .label {
+    font-weight: 500;
+    font-size: 13px;
+    margin-left: 5px;
+  }
+
+  .text {
+    margin: 3px 0 10px;
+    width: 220px;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .Joinloginbut {
+    width: 220px;
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .footerNav {
+    margin-left: 3px;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .taLnk {
+    font-size: 13px;
+  }
+}
+
+/*# sourceMappingURL=join.css.map */

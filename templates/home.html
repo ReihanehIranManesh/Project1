@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="icon" href="{{url_for('static', filename='bibliophiles_icon.png')}}"  type="image/x-icon">
+  <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='home.css')}}">
+  <title>bibliophiles</title>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">
+      <img src="{{url_for('static', filename='bibliophiles_icon.png')}}" alt="" width="45px;">
+      <span class="align-middle" style="font-family:Helvetica; color: #000;">bibiliophiles</span>
+    </a>
+
+    <div class="dropdown">
+      <i class="form-inline align-middle fas fa-user-circle fa-2x icon" title="Profile" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="left: auto;">
+        <a class="dropdown-item item">{{username}}</a>
+        <hr>
+        <a class="dropdown-item item" href="{{url_for('logout')}}">Log out</a>
+      </div>
+    </div>
+  </nav>
+
+  {% if results == "Nothing" %}
+  <form class="inputWithIcon" action="{{url_for('home')}}" method="post">
+    <input class="form-control" type="text" placeholder="Search books" aria-label="Search" name="searchinput" >
+    <button type="submit" class="sbtn">
+      <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+    </button>
+  </form>
+  <div class="ml-3 mr-3">
+    <img class="bg" src="{{url_for('static', filename='small-hearts-on-book-with-watch.jpg')}}" alt="" >
+  </div>
+  {% endif %}
+
+  {% if results != "Nothing" %}
+  <form class="inputWithIcon new" action="{{url_for('home')}}" method="post">
+    <input class="form-control" type="text" placeholder="Search books" aria-label="Search" name="searchinput" >
+    <button type="submit" class="sbtn">
+      <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+    </button>
+  </form>
+  <div class="d-flex flex-column mt-5 mb-5">
+    {% for result in results  %}
+    <div class="d-flex flex-row border mx-auto">
+      <img class="bookph" src="{{url_for('static', filename='books.jpg')}}" alt="">
+      <div class="d-flex flex-column mt-2 ml-3 mb-2">
+        <a href="{{url_for('book', title = result.title)}}" class="title">{{result.title}}</a>
+        <div class="">
+          <span class="by">by</span>
+          <a href="https://en.wikipedia.org/wiki/{{result.author}}" class="author">{{result.author}}</a>
+        </div>
+        <button class="view_button" onclick="window.location.href = '{{url_for('book', title = result.title)}}';">View details</button>
+      </div>
+    </div>
+    {% else %}
+    <h2 class="noresult ml-5 mr-5 mb-3">No results.</h2>
+    <div class="mediumText ml-5" style="color: #000;">Looking for a book?</div>
+    <ul style="margin-left: 25px; color: #181818;" class="mediumText ml-5">
+      <li>Search by title or author, and double-check the spelling.</li>
+      <li>Try searching by ISBN.</li>
+    </ul>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

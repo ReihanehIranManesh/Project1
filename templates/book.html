@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="icon" href="{{url_for('static', filename='bibliophiles_icon.png')}}"  type="image/x-icon">
+  <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='book.css')}}">
+  <title>{{info[0][2]}}</title>
+</head>
+<body>
+  <div class="ml-4">
+    <div class="d-flex flex-row mt-4">
+      <img class="ph" src="{{url_for('static', filename='book-review.png')}}" alt="">
+      <div class="d-flex flex-column ml-4">
+        <a class ="booktitle" href="https://en.wikipedia.org/wiki/{{info[0][2]}}">
+          <h1 class ="booktitle">{{info[0][2]}}</h1>
+        </a>
+        <div class="">
+          <span class="by">by</span>
+          <a href="https://en.wikipedia.org/wiki/{{info[0][3]}}" class="author">{{info[0][3]}}</a>
+        </div>
+
+        <div class="">
+
+          {% if boolean %}
+          {% for num in range(avgnum) %}
+          <span class="fa fa-star checked"></span>
+          {% endfor%}
+          {% for num in range(5 - avgnum )%}
+          <span class="fa fa-star white"></span>
+          {% endfor%}
+          {% else %}
+
+          {% for num in range(avgnum) %}
+          <span class="fa fa-star checked"></span>
+          {% endfor%}
+          <span class="fa fa-star-half-o half"></span>
+
+          {% for num in range(4 - avgnum )%}
+          <span class="fa fa-star white"></span>
+          {% endfor%}
+          {% endif %}
+          <span class="avg-rating ml-1">{{average_rating}}</span>
+          <span class="ratings">{{work_ratings_count}} ratings</span>
+
+        </div>
+        <span class="details mt-1">year of publication:{{info[0][4]}}</span>
+        <span class="details mt-1">ISBN {{info[0][1]}}</span>
+        <button class="btn_review mt-3" onclick="window.location.href = '{{url_for('review', title = info[0][2])}}';">Write a review</button>
+      </div>
+    </div>
+  </div>
+
+  {% if results is defined %}
+  <div class="d-flex flex-column mt-5 ml-4">
+    {% for result in results  %}
+    <div class="d-flex flex-row">
+      <span title="{{users[result.user_id - 1][0]}}" class="user">{{users[result.user_id - 1][0]}}</span>
+      <span class="rate">rated it</span>
+      {% for num in range(result.rate) %}
+      <span class="fa fa-star checked"></span>
+      {% endfor%}
+      {% for num in range(5 - result.rate)%}
+      <span class="fa fa-star white"></span>
+      {% endfor%}
+    </div>
+    <div class=" mt-2">
+      <pre class="review_txt mt-2">{{result.review}}</pre>
+      <hr class="hr">
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

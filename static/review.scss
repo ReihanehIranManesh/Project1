@@ -1,0 +1,150 @@
+.alertmsg
+{
+  font-size: 14px;
+  margin-top: 10px;
+  width: 500px;
+}
+.title
+{
+  color: #660066;
+  cursor: pointer;
+  font-size: 23px;
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 7px;
+  line-height: 24px;
+  text-align: left;
+}
+.title:hover
+{
+  color: #660066;
+  text-decoration: underline;
+}
+.by
+{
+  color: #181818;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 15px;
+  text-align: left;
+  line-height: 18px;
+  cursor:pointer;
+}
+.author
+{
+  font-size: 16px;
+  text-align: left;
+  cursor:pointer;
+  color: #333;
+  font-family: "Merriweather", "Georgia", serif;
+  line-height: 150%;
+}
+.author:hover
+{
+  color: #333333;
+  text-decoration: underline;
+}
+
+.rate {
+  float: left;
+  padding: 0 5px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+.label
+{
+  margin-top: 12px;
+}
+.review_textBox
+{
+  display: block;
+  height: auto;
+  resize: vertical;
+  width: 70%;
+  font-family: "Merriweather", "Georgia", serif;
+  font-size: 16px;
+  line-height: 21px;
+  background: #FFFFFF;
+  border-radius: 3px;
+  border: #DCD6CC 1px solid;
+  color: #333333;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  cursor: text;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  margin: 0em;
+  font: 400 16.3333px Arial;
+  padding: 2px;
+}
+
+.btn_post
+{
+  background-color: #f2b203;
+  color: #000;
+  font-size: 14px;
+  border-radius: 3px;
+  border: 1px solid #f2b203;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1;
+  padding: 8px 12px;
+  box-sizing: border-box;
+
+}
+.btn_post:hover
+{
+  color: #333;
+  border-color: #fdcd4a;
+  background-color: #fdcd4a;
+}
+@media screen and (max-width : 600px)
+{
+  .alertmsg
+  {
+    font-size: 12px;
+    margin-top: 10px;
+    width: 300px;
+  }
+  .review_textBox
+  {
+    width: 85%;
+    font: 400 13.3333px Arial;
+  }
+}
