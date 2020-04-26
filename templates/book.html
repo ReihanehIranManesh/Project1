@@ -4,17 +4,29 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="icon" href="{{url_for('static', filename='bibliophiles_icon.png')}}"  type="image/x-icon">
   <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='book.css')}}">
   <title>{{info[0][2]}}</title>
 </head>
 <body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand nav" href="{{url_for('home')}}">
+      <img src="{{url_for('static', filename='bibliophiles_icon.png')}}" alt="" width="45px;">
+      <span class="align-middle" style="font-family:Helvetica; color: #000;">bibiliophiles</span>
+    </a>
+
+    <div class="dropdown">
+      <i class="form-inline align-middle fas fa-user-circle fa-2x icon" title="Profile" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="left: auto;">
+        <a class="dropdown-item item" href="{{url_for('logout')}}">Log out</a>
+      </div>
+    </div>
+  </nav>
   <div class="ml-4">
-    <div class="d-flex flex-row mt-4">
+    <div class="d-flex flex-row mt-3">
       <img class="ph" src="{{url_for('static', filename='book-review.png')}}" alt="">
       <div class="d-flex flex-column ml-4">
         <a class ="booktitle" href="https://en.wikipedia.org/wiki/{{info[0][2]}}">
@@ -27,7 +39,10 @@
 
         <div class="">
 
-          {% if boolean %}
+          {%if notsuccess%}
+          <span class="notavial mt-1 mb-1">Goodread's ratings are not available for this book.</span>
+          {%else%}
+          {% if isnotFloat %}
           {% for num in range(avgnum) %}
           <span class="fa fa-star checked"></span>
           {% endfor%}
@@ -47,10 +62,10 @@
           {% endif %}
           <span class="avg-rating ml-1">{{average_rating}}</span>
           <span class="ratings">{{work_ratings_count}} ratings</span>
-
+          {% endif %}
         </div>
-        <span class="details mt-1">year of publication:{{info[0][4]}}</span>
-        <span class="details mt-1">ISBN {{info[0][1]}}</span>
+        <span class="details mt-2">year of publication:{{info[0][4]}}</span>
+        <span class="details mt-2">ISBN {{info[0][1]}}</span>
         <button class="btn_review mt-3" onclick="window.location.href = '{{url_for('review', title = info[0][2])}}';">Write a review</button>
       </div>
     </div>

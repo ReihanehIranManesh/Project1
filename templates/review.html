@@ -13,6 +13,19 @@
   <title>Review - {{title}}</title>
 </head>
 <body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand nav" href="{{url_for('home')}}">
+      <img src="{{url_for('static', filename='bibliophiles_icon.png')}}" alt="" width="45px;">
+      <span class="align-middle" style="font-family:Helvetica; color: #000;">bibiliophiles</span>
+    </a>
+
+    <div class="dropdown">
+      <i class="form-inline align-middle fas fa-user-circle fa-2x icon" title="Profile" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="left: auto;">
+        <a class="dropdown-item item" href="{{url_for('logout')}}">Log out</a>
+      </div>
+    </div>
+  </nav>
   <div class="d-flex flex-column ml-4">
     {% if message is defined %}
     <div class="alert alert-danger alert-dismissible fade show alertmsg" role="alert">
