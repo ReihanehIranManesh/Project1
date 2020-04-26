@@ -13,7 +13,7 @@
 </head>
 <body>
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">
+    <a class="navbar-brand nav" href="{{url_for('home')}}">
       <img src="{{url_for('static', filename='bibliophiles_icon.png')}}" alt="" width="45px;">
       <span class="align-middle" style="font-family:Helvetica; color: #000;">bibiliophiles</span>
     </a>
@@ -47,10 +47,11 @@
       <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
     </button>
   </form>
-  <div class="d-flex flex-column mt-5 mb-5">
+  <div class="d-flex flex-wrap mt-5 mb-5">
     {% for result in results  %}
     <div class="d-flex flex-row border mx-auto">
       <img class="bookph" src="{{url_for('static', filename='books.jpg')}}" alt="">
+
       <div class="d-flex flex-column mt-2 ml-3 mb-2">
         <a href="{{url_for('book', title = result.title)}}" class="title">{{result.title}}</a>
         <div class="">

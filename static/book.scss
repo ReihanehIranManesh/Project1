@@ -1,3 +1,43 @@
+$font : 'Trip Sans', Arial, sans-serif;
+$cntfont : "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+$info : "Merriweather", "Georgia", serif;
+.nav
+{
+  cursor: pointer;
+}
+.icon:hover
+{
+  opacity: 0.9;
+}
+
+.dropdown-menu
+{
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  min-width: 150px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  color: #000;
+  font-family: $font;
+}
+.item
+{
+  color: #000;
+  display: block;
+  padding: 3px 0 0 5px ;
+  border-radius: 4px;
+  font-weight: 550;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: $font;
+}
+.item:hover
+{
+  background: #f2f2f2;
+}
 .ph
 {
   max-width: 140px;
@@ -7,7 +47,7 @@
 {
   width: 100%;
   font-weight: bold;
-  font-family: "Merriweather", "Georgia", serif;
+  font-family: $info;
   color: #333333;
   font-size: 24px;
   line-height: 1.25;
@@ -20,7 +60,7 @@
 {
   color: #333;
   font-size: 16px;
-  font-family: "Merriweather", "Georgia", serif;
+  font-family: $info;
   text-align: left;
   line-height: 18px;
   cursor:pointer;
@@ -31,7 +71,7 @@
   text-align: left;
   cursor:pointer;
   color: #181818;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $cntfont;
   line-height: 24px;
 }
 .author:hover, .booktitle:hover
@@ -56,23 +96,31 @@
   color:#ffc700;
   cursor:pointer;
 }
+.notavial
+{
+}
 
 .avg-rating
 {
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: $cntfont;
   font-size: 13px;
   text-align: left;
   color: #181818;
   line-height: 18px;
 }
-.ratings, .details
+.ratings, .details, .notavial
 {
   color: #660066;
   cursor: pointer;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: $cntfont;
   font-size: 14px;
   text-align: left;
   line-height: 18px;
+}
+.notavial
+{
+  font-size: 16px;
+  color: #993399;
 }
 .ratings
 {
@@ -84,7 +132,7 @@
   color: #000;
   border: 1px solid #f2b203;
   border-radius: 3px;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: $cntfont;
   font-size: 14px;
   cursor: pointer;
   display: inline-block;
@@ -107,7 +155,7 @@
   color: #660066;
   cursor: pointer;
   font-size: 15px;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: $cntfont;
   text-align: left;
   line-height: 18px;
 }
@@ -121,7 +169,7 @@
 
 .review_txt
 {
-  font-family: "Merriweather", "Georgia", serif;
+  font-family: $info;
   line-height: 21px;
   font-size: 17px;
   text-align: left;
@@ -135,7 +183,8 @@
 {
   .ph
   {
-    max-width: 130px;
+    max-width: 120px;
+    max-height: 200px;
   }
   .hr
   {
@@ -144,6 +193,13 @@
   .ratings
   {
     margin-left: 3px;
-
+  }
+  .booktitle
+  {
+    font-size: 20px;
+  }
+  .author
+  {
+    font-size: 14px;
   }
 }

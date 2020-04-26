@@ -1,3 +1,43 @@
+$font : 'Trip Sans', Arial, sans-serif;
+$cntfont : "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+$info : "Merriweather", "Georgia", serif;
+.nav
+{
+  cursor: pointer;
+}
+.icon:hover
+{
+  opacity: 0.9;
+}
+
+.dropdown-menu
+{
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  min-width: 150px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  color: #000;
+  font-family: $font;
+}
+.item
+{
+  color: #000;
+  display: block;
+  padding: 3px 0 0 5px ;
+  border-radius: 4px;
+  font-weight: 550;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: $font;
+}
+.item:hover
+{
+  background: #f2f2f2;
+}
 .alertmsg
 {
   font-size: 14px;
@@ -9,7 +49,7 @@
   color: #660066;
   cursor: pointer;
   font-size: 23px;
-  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  font-family: $info;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 7px;
@@ -24,7 +64,7 @@
 .by
 {
   color: #181818;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: $cntfont;
   font-size: 15px;
   text-align: left;
   line-height: 18px;
@@ -36,7 +76,7 @@
   text-align: left;
   cursor:pointer;
   color: #333;
-  font-family: "Merriweather", "Georgia", serif;
+  font-family: $info;
   line-height: 150%;
 }
 .author:hover
@@ -90,7 +130,7 @@
   height: auto;
   resize: vertical;
   width: 70%;
-  font-family: "Merriweather", "Georgia", serif;
+  font-family: $info;
   font-size: 16px;
   line-height: 21px;
   background: #FFFFFF;
@@ -119,7 +159,7 @@
   font-size: 14px;
   border-radius: 3px;
   border: 1px solid #f2b203;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: $cntfont;
   cursor: pointer;
   display: inline-block;
   text-decoration: none;

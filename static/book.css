@@ -1,4 +1,40 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+.nav {
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 0.9;
+}
+
+.dropdown-menu {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  min-width: 150px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  color: #000;
+  font-family: "Trip Sans", Arial, sans-serif;
+}
+
+.item {
+  color: #000;
+  display: block;
+  padding: 3px 0 0 5px;
+  border-radius: 4px;
+  font-weight: 550;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Trip Sans", Arial, sans-serif;
+}
+
+.item:hover {
+  background: #f2f2f2;
+}
+
 .ph {
   max-width: 140px;
   cursor: pointer;
@@ -31,7 +67,7 @@
   text-align: left;
   cursor: pointer;
   color: #181818;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
   line-height: 24px;
 }
 
@@ -63,13 +99,18 @@
   line-height: 18px;
 }
 
-.ratings, .details {
+.ratings, .details, .notavial {
   color: #660066;
   cursor: pointer;
   font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
   font-size: 14px;
   text-align: left;
   line-height: 18px;
+}
+
+.notavial {
+  font-size: 16px;
+  color: #993399;
 }
 
 .ratings {
@@ -129,7 +170,8 @@
 
 @media screen and (max-width: 600px) {
   .ph {
-    max-width: 130px;
+    max-width: 120px;
+    max-height: 200px;
   }
 
   .hr {
@@ -138,6 +180,14 @@
 
   .ratings {
     margin-left: 3px;
+  }
+
+  .booktitle {
+    font-size: 20px;
+  }
+
+  .author {
+    font-size: 14px;
   }
 }
 
